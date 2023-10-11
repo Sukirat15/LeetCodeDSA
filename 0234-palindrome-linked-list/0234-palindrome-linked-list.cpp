@@ -67,3 +67,20 @@ public:
 
     }
 };
+
+
+/*Approach
+
+Brute Force Approach:First we will copy all the elements of linked list into an array.
+Then we will check that if that array is palindrome or not.but it will use extra space of O(n)
+
+Optimised Approach:We will first find middle of the linked list using slow fast approach 
+we will increase slow by one node and fast by 2 nodes till fast reaches 2nd last node or last node.Once fast node reaches then we will reverse the linked list ahead of slow pointer 
+then we will take a dummy node and initialise it on the head and increment slow by one node
+then we will keep on checking slow->val==dummy->val and slow!=NULL.As soon as slow reaches NULL then we will declare that linked list is palindrome else not palindrome.
+
+
+Time Complexity:O(n)
+Space Complexity:O(1)
+
+*/
