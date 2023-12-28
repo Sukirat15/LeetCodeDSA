@@ -1,29 +1,30 @@
 class Solution {
 public:
     vector<int> findDisappearedNumbers(vector<int>& nums) {
+     
         
-
+        int idx=-1;
+        
         for(int i=0;i<nums.size();i++)
         {
-             int idx=abs(nums[i])-1;
-
-             if(nums[idx]>0)
-             nums[idx]*=-1;
-             
+            if(nums[i]>0)
+                idx=nums[i]-1;
+            else
+                idx=nums[i]*-1-1;
+            
+            if(nums[idx]>0)
+                nums[idx]=-nums[idx];
+                
         }
-
-        vector<int> v1;
-
+        vector<int> ans;
+        
         for(int j=0;j<nums.size();j++)
         {
             if(nums[j]>0)
-            v1.push_back(j+1);
+                ans.push_back(j+1);
+                
         }
-
-        return v1;
-    }
-};
-
-/*Time Complexity:O(2N)~O(N)
-Space Complexity:O(1)
-*/
+        
+        return ans;
+    }};
+      
